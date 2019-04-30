@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>tar压缩解压</title>
+      <title>【杂项】tar压缩解压</title>
       <link>https://github.com/post/tar_zip_unzip/</link>
       <pubDate>Tue, 30 Apr 2019 16:11:16 +0800</pubDate>
       
@@ -23,7 +23,7 @@ tar -xvf file.tar #解压 tar包 tar -xzvf file.tar.gz #解压tar.gz tar -xjvf f
     </item>
     
     <item>
-      <title>Rust升级nighty升级失败处理</title>
+      <title>【杂项】Rust升级nighty升级失败处理</title>
       <link>https://github.com/post/rust_update_nighty_fail/</link>
       <pubDate>Tue, 30 Apr 2019 15:20:18 +0800</pubDate>
       
@@ -33,7 +33,7 @@ rustup install nightly-2019-04-15  </description>
     </item>
     
     <item>
-      <title>iOS中使用rust</title>
+      <title>【杂项】iOS中使用rust</title>
       <link>https://github.com/post/rust_in_ios/</link>
       <pubDate>Tue, 30 Apr 2019 15:14:00 +0800</pubDate>
       
