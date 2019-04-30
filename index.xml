@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Panic-face&#39;s blog</title>
-    <link>https://github.com/burning-frog/</link>
+    <link>https://github.com/</link>
     <description>Recent content on Panic-face&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 30 Apr 2019 16:11:16 +0800</lastBuildDate>
     
-	<atom:link href="https://github.com/burning-frog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://github.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>tar压缩解压</title>
-      <link>https://github.com/burning-frog/post/tar_zip_unzip/</link>
+      <link>https://github.com/post/tar_zip_unzip/</link>
       <pubDate>Tue, 30 Apr 2019 16:11:16 +0800</pubDate>
       
-      <guid>https://github.com/burning-frog/post/tar_zip_unzip/</guid>
+      <guid>https://github.com/post/tar_zip_unzip/</guid>
       <description>压缩
 tar -cvf jpg.tar *.jpg #将目录里所有jpg文件打包成jpg.tar tar -czf jpg.tar.gz *.jpg #将目录里所有jpg文件打包成jpg.tar后，并且将其用gzip压缩，生成一个gzip压缩过的包，命名为jpg.tar.gz tar -cjf jpg.tar.bz2 *.jpg #将目录里所有jpg文件打包成jpg.tar后，并且将其用bzip2压缩，生成一个bzip2压缩过的包，命名为jpg.tar.bz2 tar -cZf jpg.tar.Z *.jpg #将目录里所有jpg文件打包成jpg.tar后，并且将其用compress压缩，生成一个umcompress压缩过的包，命名为jpg.tar.Z rar a jpg.rar *.jpg #rar格式的压缩，需要先下载rar for linux zip jpg.zip *.jpg #zip格式的压缩，需要先下载zip for linux  解压
 tar -xvf file.tar #解压 tar包 tar -xzvf file.tar.gz #解压tar.gz tar -xjvf file.tar.bz2 #解压 tar.bz2 tar -xZvf file.tar.Z #解压tar.Z unrar e file.rar #解压rar unzip file.zip #解压zip  </description>
@@ -24,20 +24,20 @@ tar -xvf file.tar #解压 tar包 tar -xzvf file.tar.gz #解压tar.gz tar -xjvf f
     
     <item>
       <title>Rust升级nighty升级失败处理</title>
-      <link>https://github.com/burning-frog/post/rust_update_nighty_fail/</link>
+      <link>https://github.com/post/rust_update_nighty_fail/</link>
       <pubDate>Tue, 30 Apr 2019 15:20:18 +0800</pubDate>
       
-      <guid>https://github.com/burning-frog/post/rust_update_nighty_fail/</guid>
+      <guid>https://github.com/post/rust_update_nighty_fail/</guid>
       <description>错误信息：component &amp;lsquo;rls&amp;rsquo; for target &amp;lsquo;x86_64-apple-darwin&amp;rsquo; is unavailable for download for channel &amp;lsquo;nightly&amp;rsquo;
 rustup install nightly-2019-04-15  </description>
     </item>
     
     <item>
       <title>iOS中使用rust</title>
-      <link>https://github.com/burning-frog/post/rust_in_ios/</link>
+      <link>https://github.com/post/rust_in_ios/</link>
       <pubDate>Tue, 30 Apr 2019 15:14:00 +0800</pubDate>
       
-      <guid>https://github.com/burning-frog/post/rust_in_ios/</guid>
+      <guid>https://github.com/post/rust_in_ios/</guid>
       <description>1.首先添加对应的architectures
 rustup target add aarch64-apple-ios armv7-apple-ios armv7s-apple-ios x86_64-apple-ios i386-apple-ios  2.创建项目
 mkdir rust-ios-example cd rust-ios-example cargo new rust --lib cd rust  3.编写rust
