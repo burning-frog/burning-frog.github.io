@@ -44,5 +44,18 @@ mkdir rust-ios-example cd rust-ios-example cargo new rust --lib cd rust  3.编�
 use std::os::raw::{c_char}; use std::ffi::{CString, CStr}; #[no_mangle] pub extern fn rust_hello(to: *const c_char) -&amp;gt; *mut c_char let c_str = unsafe{ CStr::from_ptr(to) } let recipient = match c_str.to_str() { Err(_) =&amp;gt; &amp;quot;there&amp;quot;, Ok(string) =&amp;gt; string, }; CString::new(&amp;quot;hello&amp;quot;.to_owned() + recipient).unwarp().into_raw() } #[no_mangle] pub extern fn rust_hello_free(s: *mut c_char) { unsafe { if s.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://burning-frog.github.io/post/go_slice_notice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://burning-frog.github.io/post/go_slice_notice/</guid>
+      <description>slice 1、slice是底层数组的引用，数组是值类型，切片是引用类型
+2、数组的长度大的时候，数值的拷贝代价远大于指针的拷贝，但是小数组的值拷贝，代价可能会小于指针的拷贝，也就是说小数组可以通过传递自己本身的方式传递，但是大数组最好是通过slice来传递，或者数组指针的方式传递
+3、切片在append的时候，如果超过底层数组的容量，就会扩容，会分配一个新的数组，会带来一定的性能的消耗，所以如果是需要频繁的扩容可以指定一个大一点的容量
+4、如果切片在修改值得过程中，不会发生扩容，就会直接修改到底层数组，这个时候需要考虑会对其他同源的切片带来的影响
+5、切片的copy以短的slice的长度标准，短slice copy完了操作就完成了，并且slice使用range的时候 取到的事切片中的值拷贝，所以修改无法改变原来slice中的值，需要使用指针</description>
+    </item>
+    
   </channel>
 </rss>

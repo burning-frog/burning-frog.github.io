@@ -35,6 +35,11 @@
   </url>
   
   <url>
+    <loc>https://burning-frog.github.io/post/go_slice_notice/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://burning-frog.github.io/categories/</loc>
     <priority>0</priority>
   </url>

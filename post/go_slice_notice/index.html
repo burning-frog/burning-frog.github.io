@@ -20,10 +20,10 @@
     <title>
       
       
-         【杂项】iOS中使用rust 
+          
       
     </title>
-    <link rel="canonical" href="https://burning-frog.github.io/post/rust_in_ios/">
+    <link rel="canonical" href="https://burning-frog.github.io/post/go_slice_notice/">
 
     <style>
   * {
@@ -400,100 +400,31 @@
 
 
 <section id=content>
-  <h1> 【杂项】iOS中使用rust </h1>
+  <h1>  </h1>
 
-  
-    <div id=sub-header>
-      April 2019 · 1 minute read
-    </div>
   
 
   <div class="entry-content">
-    <p>1.首先添加对应的architectures</p>
+    
 
-<pre><code class="language-shell">   rustup target add aarch64-apple-ios armv7-apple-ios armv7s-apple-ios x86_64-apple-ios i386-apple-ios
-   
-</code></pre>
+<h2 id="slice">slice</h2>
 
-<p>2.创建项目</p>
+<p>1、slice是底层数组的引用，数组是值类型，切片是引用类型</p>
 
-<pre><code class="language-shell">   mkdir rust-ios-example
-   cd rust-ios-example
-   
-   cargo new rust --lib
-   cd rust
-</code></pre>
+<p>2、数组的长度大的时候，数值的拷贝代价远大于指针的拷贝，但是小数组的值拷贝，代价可能会小于指针的拷贝，也就是说小数组可以通过传递自己本身的方式传递，但是大数组最好是通过slice来传递，或者数组指针的方式传递</p>
 
-<p>3.编写rust</p>
+<p>3、切片在append的时候，如果超过底层数组的容量，就会扩容，会分配一个新的数组，会带来一定的性能的消耗，所以如果是需要频繁的扩容可以指定一个大一点的容量</p>
 
-<pre><code class="language-rust">   use std::os::raw::{c_char};
-   use std::ffi::{CString, CStr};
-   
-   #[no_mangle]
-   pub extern fn rust_hello(to: *const c_char) -&gt; *mut c_char 
-     let c_str = unsafe{ CStr::from_ptr(to) }
-     let recipient = match c_str.to_str() {
-       Err(_) =&gt; &quot;there&quot;,
-       Ok(string) =&gt; string,
-     };
-   	CString::new(&quot;hello&quot;.to_owned() + recipient).unwarp().into_raw()
-   }
-   
-   #[no_mangle]
-   pub extern fn rust_hello_free(s: *mut c_char) {
-     unsafe {
-       if s.is_null() { return }
-       CString::from_raw(s)
-     }
-   }
-</code></pre>
+<p>4、如果切片在修改值得过程中，不会发生扩容，就会直接修改到底层数组，这个时候需要考虑会对其他同源的切片带来的影响</p>
 
-<p>4.在Cargo.toml中修改成以下设置</p>
-
-<pre><code class="language-shell">   cbindgen src/lib.rs -l c &gt; rust.h
-</code></pre>
-
-<pre><code class="language-toml">   [lib]
-   name = &quot;rust&quot;
-   crate-type = [&quot;staticlib&quot;, &quot;cydlib&quot;]
-</code></pre>
-
-<p>5.在xcode项目中使用</p>
-
-<pre><code class="language-swift">   import UIKit
-   class ViewController: UIViewController {
-     override func viewDidLoad() {
-       super.viewDidLoad()
-       
-       let resut = rust_hello(&quot;world&quot;)
-       let swift_resut = String(cString: resutl!)
-       rust_hello_free(UnsafeMutablePointer(mutating: resut))
-       print(swift_result)
-     }
-   }
-</code></pre>
-
-<p>6.将头文件和.a文件加入xcode中连接</p>
-
-<p>记得设置Header search Path 和Library search path以及Objective-c Bridging Header</p>
-
-<pre><code class="language-shell">   cd ~/rust-ios-example
-   
-   mkdir hello-rust/libs
-   mkdir hello-rust/include
-   
-   cp rust/rust.h hello-rust/include
-   cp rust/target/universal/release/librust.a hello-rust/libs
-</code></pre>
+<p>5、切片的copy以短的slice的长度标准，短slice copy完了操作就完成了，并且slice使用range的时候 取到的事切片中的值拷贝，所以修改无法改变原来slice中的值，需要使用指针</p>
 
   </div>
 
   <div id=links>
     
-      <a class="basic-alignment left" href="https://burning-frog.github.io/post/go_slice_notice/">&laquo; </a>
     
-    
-      <a class="basic-alignment left" href="https://burning-frog.github.io/post/rust_update_nighty_fail/">【杂项】Rust升级nighty升级失败处理 &raquo;</a>
+      <a class="basic-alignment left" href="https://burning-frog.github.io/post/rust_in_ios/">【杂项】iOS中使用rust &raquo;</a>
     
   </div>
 </section>
