@@ -6,15 +6,15 @@
     <description>Recent content in Posts on Panic-face&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Apr 2019 16:11:16 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 May 2019 10:56:33 +0800</lastBuildDate>
     
 	<atom:link href="https://burning-frog.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>【go】slice使用注意的事项</title>
+      <title>Go_slice_notice</title>
       <link>https://burning-frog.github.io/post/go_slice_notice/</link>
-      <pubDate>Tue, 30 Apr 2019 16:11:16 +0800</pubDate>
+      <pubDate>Wed, 15 May 2019 10:56:33 +0800</pubDate>
       
       <guid>https://burning-frog.github.io/post/go_slice_notice/</guid>
       <description>1、slice是底层数组的引用，数组是值类型，切片是引用类型
