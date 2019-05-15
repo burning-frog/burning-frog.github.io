@@ -20,7 +20,7 @@
     <title>
       
       
-          
+         【go】slice使用注意的事项 
       
     </title>
     <link rel="canonical" href="https://burning-frog.github.io/post/go_slice_notice/">
@@ -400,16 +400,16 @@
 
 
 <section id=content>
-  <h1>  </h1>
+  <h1> 【go】slice使用注意的事项 </h1>
 
+  
+    <div id=sub-header>
+      April 2019 · 1 minute read
+    </div>
   
 
   <div class="entry-content">
-    
-
-<h2 id="slice">slice</h2>
-
-<p>1、slice是底层数组的引用，数组是值类型，切片是引用类型</p>
+    <p>1、slice是底层数组的引用，数组是值类型，切片是引用类型</p>
 
 <p>2、数组的长度大的时候，数值的拷贝代价远大于指针的拷贝，但是小数组的值拷贝，代价可能会小于指针的拷贝，也就是说小数组可以通过传递自己本身的方式传递，但是大数组最好是通过slice来传递，或者数组指针的方式传递</p>
 
@@ -423,8 +423,8 @@
 
   <div id=links>
     
+      <a class="basic-alignment left" href="https://burning-frog.github.io/post/tar_zip_unzip/">&laquo; 【杂项】tar压缩解压</a>
     
-      <a class="basic-alignment left" href="https://burning-frog.github.io/post/rust_in_ios/">【杂项】iOS中使用rust &raquo;</a>
     
   </div>
 </section>
